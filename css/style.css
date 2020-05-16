@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+    background-color: #f9f9ff;
+    font-family: 'Poppins', sans-serif;
+}
+
+header .container {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    padding: 20px 0;
+    height: 20vh;
+}
+
+
+/* .nav-logo-link:link, .nav-logo-link:visited {
+    text-decoration: none;
+    color: #777;
+    letter-spacing: 2px;
+    font-size: 20px;
+  } */
+
+.nav-menu {
+    z-index: 2;
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        color: white;
+        background-color: #0a1214;
+        flex-direction: column;
+        width: 300px;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
+        transform: translateX(100%);
+        transition: all .5s ease;
+    }
+}
+
+.nav-menu-link {
+    text-decoration: none;
+    color: black;
+    transition: all .4s ease;
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-menu.open {
+        transform: translateX(0);
+    }
+}
+
+.nav-menu-link:hover {
+    text-decoration: none;
+    color: #0072C2;
+    transition: all .4s ease;
+    font-size: 18px;
+}
+
+.nav-burger {
+    z-index: 2;
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-burger {
+        display: block;
+    }
+}
+
+.nav-burger-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+}
+
+.nav-burger-item,
+.nav-burger-item::after,
+.nav-burger-item::before {
+    display: block;
+    height: 2px;
+    width: 30px;
+    background-color: #0072C2;
+}
+
+.nav-burger-item {
+    position: relative;
+    transition: all .1s ease;
+}
+
+.nav-burger-item::after,
+.nav-burger-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    transition: all .2s ease;
+}
+
+.nav-burger-item::after {
+    top: 7px;
+}
+
+.nav-burger-item::before {
+    top: -7px;
+}
+
+.closed .nav-burger-item::after,
+.closed .nav-burger-item::before {
+    top: 0;
+}
+
+.closed .nav-burger-item {
+    background-color: transparent;
+}
+
+.closed .nav-burger-item::after {
+    transform: rotate(135deg);
+}
+
+.closed .nav-burger-item::before {
+    transform: rotate(-135deg);
+}
+
+section.intro {
+    background-image: url("../images/intro_bg.jpg");
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    opacity: 0.7;
+}
+
+.intro-heading {
+    margin-top: 50px;
+    float: right;
+}
+
+.intro-heading h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin: 20px 0;
+    color: floralwhite !important;
+}
+
+.intro-heading p {
+    max-width: 515px;
+    margin-bottom: 30px;
+    font-size: 17px;
+    color: floralwhite !important;
+}
+
+section.aboutus {
+    margin: 30px 0;
+}
+
+section.aboutus h1 {
+    color: #0072C2;
+    text-align: center;
+    line-height: 1.2em !important;
+    font-weight: 600;
+}
+
+section.aboutus h3 {
+    color: #222;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.aboutus-detail {
+    margin: 40px 0;
+}
+
+.aboutus-detail p {
+    color: #777;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.aboutus-cards {
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.aboutus-card {
+    margin: 0 4px 10px;
+    width: 32.33%;
+    /* border: 1px solid #777; */
+}
+
+.grow {
+    transition: all .7s ease-out;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+}
+
+.aboutus-card h2 {
+    color: #0072C2;
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.card-image {
+    text-align: center;
+}
+
+.card-image img {
+    width: 30%;
+    height: 30%;
+}
+
+.card-detail p {
+    color: #777;
+    font-size: 14px;
+    /* line-height: 32px; */
+    padding-left: 20px;
+    font-weight: 100;
+    border-left: 1px solid rgba(68, 68, 68, .15);
+}
+
+section.contact-enquiry {
+    background-color: #0072C2;
+}
+
+.contact-enquiry .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact {
+    margin: 20px 10px;
+    width: 50%;
+}
+
+.name h1 {
+    color: floralwhite;
+    line-height: 1.2em !important;
+    font-weight: 600;
+}
+
+.name h3 {
+    color: floralwhite;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.name {
+    padding-left: 10px;
+    border-left: 6px solid floralwhite;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    color: white;
+}
+
+.enquiry {
+    width: 50%;
+    margin: 20px 10px;
+}
+
+.enquiry h2 {
+    color: floralwhite;
+    line-height: 1.2em !important;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    margin-bottom: 30px;
+}
+
+button {
+    Background-color: floralwhite;
+    color: #0072C2
+}
+
+footer {
+    height: 5vh;
+    background-color: #222;
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        height: 15vh;
+    }
+    .nav-logo img {
+        width: 75%;
+        height: 75%;
+    }
+    .nav-menu-link {
+        text-decoration: none;
+        color: white;
+        /* background-color: #0a1214; */
+        transition: all .4s ease;
+        font-size: 18px;
+    }
+    section.intro {
+        background-image: url("../images/intro_bg_res.jpg");
+        height: 85vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+    }
+    .intro-heading {
+        margin-top: 10px;
+    }
+    .intro-heading h1 {
+        font-size: 50px;
+    }
+    .aboutus-card {
+        width: 100%;
+    }
+    .card-image {
+        text-align: center;
+    }
+    .aboutus-card h2 {
+        text-align: center;
+    }
+    .enquiry,
+    .contact {
+        width: 100%;
+    }
+}
