@@ -51,6 +51,12 @@ header {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .nav-menu.open {
+        transform: translateX(0);
+    }
+}
+
 .nav-menu-link {
     text-decoration: none;
     color: black;
@@ -58,23 +64,29 @@ header {
     font-size: 18px;
 }
 
-@media only screen and (max-width: 600px) {
-    .nav-menu.open {
-        transform: translateX(0);
-    }
+.nav-menu-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #0072C2;
+    transition: width .3s;
 }
 
-.nav-menu-link:hover {
-    text-decoration: none;
+.nav-menu-link:hover::after {
+    width: 100%;
     color: #0072C2;
-    transition: all .4s ease;
-    font-size: 18px;
 }
 
 .nav-burger {
-    z-index: 2;
+    z-index: 999;
     display: none;
 }
+
+
+/* a::after {
+    content: (" attr(href) ");
+} */
 
 @media only screen and (max-width: 600px) {
     .nav-burger {
@@ -100,7 +112,7 @@ header {
 }
 
 .nav-burger-item {
-    position: relative;
+    position: fixed;
     transition: all .1s ease;
 }
 
@@ -122,6 +134,7 @@ header {
 
 .closed .nav-burger-item::after,
 .closed .nav-burger-item::before {
+    content: '';
     top: 0;
 }
 
@@ -145,6 +158,10 @@ section.intro {
     background-position-x: center;
     background-position-y: center;
     opacity: 0.7;
+}
+
+.intro .container {
+    margin-top: 10px;
 }
 
 .intro-heading {
@@ -242,13 +259,62 @@ section.aboutus h3 {
     border-left: 1px solid rgba(68, 68, 68, .15);
 }
 
+.project .container {
+    text-align: center;
+}
+
+section.project {
+    margin-bottom: 20px;
+}
+
+section.project h1 {
+    color: #0072C2;
+    text-align: center;
+    line-height: 1.2em !important;
+    font-weight: 600;
+}
+
+section.project h3 {
+    color: #222;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.cols {
+    width: 32%;
+    float: left;
+    margin: 0.5rem;
+}
+
+.cols img {
+    width: 100%;
+    margin-bottom: 1rem;
+    /* border-radius: 15px; */
+}
+
+.project .btn {
+    background-color: #0072C2;
+    line-height: 42px;
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: none;
+    color: floralwhite;
+    /* display: inline-block; */
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    position: relative;
+}
+
 section.contact-enquiry {
     background-color: #0072C2;
 }
 
 .contact-enquiry .container {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .contact {
@@ -301,13 +367,19 @@ button {
 }
 
 footer {
-    height: 5vh;
     background-color: #222;
+}
+
+footer h4 {
+    padding: 5px 0;
+    color: white;
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
     header {
-        height: 15vh;
+        padding: 20px 0 0;
+        height: 100%;
     }
     .nav-logo img {
         width: 75%;
@@ -329,10 +401,14 @@ footer {
         background-position-y: center;
     }
     .intro-heading {
-        margin-top: 10px;
+        margin: 10px;
     }
     .intro-heading h1 {
         font-size: 50px;
+    }
+    .intro-heading p {
+        margin: 0 10px 30px;
+        width: 100%;
     }
     .aboutus-card {
         width: 100%;
@@ -343,8 +419,25 @@ footer {
     .aboutus-card h2 {
         text-align: center;
     }
+    .cols {
+        width: 100%;
+    }
+    .contact-enquiry .container {
+        flex-wrap: wrap;
+    }
     .enquiry,
     .contact {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    section.intro {
+        background-image: url("../images/intro_bg_res.jpg");
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
     }
 }
